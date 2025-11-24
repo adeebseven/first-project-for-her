@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Typewriter Message</title>
+</head>
+<body>
+
+    <h2 id="output"></h2>
+
+    <button onclick="startTyping()">Reveal</button>
+
+    <script>
+        let message = "she has no idea how rare she is.";
+        let index = 0;
+
+        function startTyping() {
+            index = 0; 
+            document.getElementById("output").innerText = "";
+
+            let typing = setInterval(() => {
+                document.getElementById("output").innerText += message[index];
+                index++;
+
+                if (index === message.length) {
+                    clearInterval(typing);
+                }
+            }, 80); 
+        }
+    </script>
+
+</body>
+</html>
